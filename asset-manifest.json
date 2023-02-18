@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/medapp/static/css/main.20710227.css",
+    "main.js": "/medapp/static/js/main.6e09fbed.js",
+    "static/media/bootstrap-icons.woff?": "/medapp/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
+    "static/media/bootstrap-icons.woff2?": "/medapp/static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
+    "static/media/Background.png": "/medapp/static/media/Background.ad244678666c59555965.png",
+    "static/media/Justin.png": "/medapp/static/media/Justin.76311f45fcbb16b95af6.png",
+    "static/media/bg2.png": "/medapp/static/media/bg2.54483e0fbaeed17e19e8.png",
+    "static/media/helvetica-neu.ttf": "/medapp/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
+    "static/media/LaBelleAurore.woff": "/medapp/static/media/LaBelleAurore.9c5433c64baa43d1d274.woff",
+    "static/media/LaBelleAurore.woff2": "/medapp/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
+    "static/media/med1.png": "/medapp/static/media/med1.16f3ca5e89310a4ca034.png",
+    "static/media/CoolveticaRg-Regular.woff": "/medapp/static/media/CoolveticaRg-Regular.8307bfa187bccdc55f4d.woff",
+    "static/media/CoolveticaRg-Regular.woff2": "/medapp/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
+    "index.html": "/medapp/index.html",
+    "main.20710227.css.map": "/medapp/static/css/main.20710227.css.map",
+    "main.6e09fbed.js.map": "/medapp/static/js/main.6e09fbed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20710227.css",
+    "static/js/main.6e09fbed.js"
+  ]
+}
