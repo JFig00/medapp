@@ -18,7 +18,7 @@ function Profile() {
   let gettingInfo = () =>{
     setMessage(null)
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + auth.currentUser.uid)
+      .get('localhost:5678/user/' + auth.currentUser.uid)
       .then(function (response) {
         // handle success
         setData(response.data)
@@ -47,11 +47,11 @@ function Profile() {
     }
     else{
       axios
-        .put('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + auth.currentUser.uid, {
+        .put('localhost:5678/user/' + auth.currentUser.uid, {
           displayName: userName
 
         })
-        .then(function (response) {
+        .then(function () {
           // handle success
           setError(false)
           gettingInfo()
@@ -78,7 +78,7 @@ function Profile() {
     
     /*
     axios
-      .put('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + auth.currentUser.uid, {
+      .put('localhost:5678/user/' + auth.currentUser.uid, {
         profilePicture: selectedImage,
       })
       .then(function (response) {

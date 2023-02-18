@@ -2,10 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Card } from 'react-bootstrap'
 import { auth } from './Firebase'
-import Loader from 'react-loaders'
-import { Dropdown, Button, Modal, Col } from "react-bootstrap"
+import { Button, Modal } from "react-bootstrap"
 
 function Admin() {
   let [data, setData] = useState(null)
@@ -23,7 +21,7 @@ function Admin() {
   const handleClose = () => setShow(false);
   let determineAccess = () =>{
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + auth.currentUser.uid)
+      .get('localhost:5678/user/' + auth.currentUser.uid)
       .then(function (response) {
         // handle success
         setIsAdmin(response.data.admin)
@@ -48,7 +46,7 @@ function Admin() {
   }
   let users = () => {
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user')
+      .get('localhost:5678/user')
       .then(function (response) {
         // handle success
         console.log(response.data)
@@ -76,7 +74,7 @@ function Admin() {
     if ((adminStatus === "true" || adminStatus === "false") &&  (ownerStatus === "true" || ownerStatus === "false")){
       setMessage("Status Changed")
       axios
-        .put('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + info.userID, {
+        .put('localhost:5678/user/' + info.userID, {
           owner: adminStatus,
           admin: ownerStatus
         })
@@ -109,7 +107,7 @@ function Admin() {
     setMessage(null)
     setShow(true)
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + e.target.value)
+      .get('localhost:5678/user/' + e.target.value)
       .then(function (response) {
         // handle success
         setInfo(response.data)

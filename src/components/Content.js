@@ -17,7 +17,7 @@ function Content() {
     */
   let getModule = () => {
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request')
+      .get('localhost:5678/request')
       .then(function (response) {
         // handle success
         setError(false)
@@ -48,7 +48,7 @@ function Content() {
     console.log(auth.currentUser.uid)
 
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + auth.currentUser.uid)
+      .get('localhost:5678/user/' + auth.currentUser.uid)
       .then(function (response) {
         // handle success
         setError(false)
@@ -69,10 +69,10 @@ function Content() {
           console.log(newCourses)
 
           axios
-            .put('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + auth.currentUser.uid, {
+            .put('localhost:5678/user/' + auth.currentUser.uid, {
               userCourses: newCourses,
             })
-            .then(function (response) {
+            .then(function () {
               // handle success
               setError(false)
             })

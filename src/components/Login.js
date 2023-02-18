@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from './Firebase'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
@@ -42,7 +42,7 @@ export const Login = () => {
       .then((result) => {
         //getting details from signed in account using google
         axios
-          .post('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user', {
+          .post('localhost:5678/user', {
             points: 0,
             userID: result.user.uid,
             userCourses: userCourses.split(""),
@@ -52,7 +52,7 @@ export const Login = () => {
             owner: "false",
             admin: "false"
           })
-          .then(function (response) {
+          .then(function () {
             // handle success
 
           })
@@ -92,7 +92,7 @@ export const Login = () => {
         } else {
           
           axios
-            .post('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user', {
+            .post('localhost:5678/user', {
               points: 0,
               userID: auth.currentUser.uid,
               userCourses: userCourses.split(""),
@@ -102,7 +102,7 @@ export const Login = () => {
               owner: "false",
               admin: "false"
             })
-            .then(function (response) {
+            .then(function () {
 
             })
             .catch(function (error) {

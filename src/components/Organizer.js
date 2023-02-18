@@ -46,7 +46,7 @@ function Content() {
 
   let determineAccess = () => {
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + auth.currentUser.uid)
+      .get('localhost:5678/user/' + auth.currentUser.uid)
       .then(function (response) {
         // handle success
         setIsOwner(response.data.owner)
@@ -69,7 +69,7 @@ function Content() {
   */
   let getFormData = () => {
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request')
+      .get('localhost:5678/request')
       .then(function (response) {
         // handle success
         setError(false)
@@ -97,7 +97,7 @@ function Content() {
     setCourse(e.target.innerText)
 
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request/' + e.target.innerText)
+      .get('localhost:5678/request/' + e.target.innerText)
       .then(function (response) {
         // handle success
         setError(false)
@@ -123,10 +123,10 @@ function Content() {
     e.preventDefault()
 
     axios
-      .post('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request', {
+      .post('localhost:5678/request', {
         collectionName: collectionName,
       })
-      .then(function (response) {
+      .then(function () {
         // handle success
         setCollectionName('')
         window.location.reload(false)
@@ -164,8 +164,8 @@ function Content() {
     if (deleting === course) {
       setIsDeleted('The module has been Deleted')
       axios
-        .delete('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request/' + deleting, {})
-        .then(function (response) {
+        .delete('localhost:5678/request/' + deleting, {})
+        .then(function () {
           // handle success
           setDeleting('')
           window.location.reload(false)
@@ -199,13 +199,13 @@ function Content() {
     } else {
       console.log('Success')
       axios
-        .post('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request/' + course, {
+        .post('localhost:5678/request/' + course, {
           question: question,
           type: type,
           options: options,
           answer: answer,
         })
-        .then(function (response) {
+        .then(function () {
           // handle success
           setAnswer('')
           setType('pick one')
@@ -230,18 +230,18 @@ function Content() {
     }
   }
 
-  let createAppear = (e) => {
+  let createAppear = () => {
     setCreate(true)
   }
 
-  let EditAppear = (e) => {
+  let EditAppear = () => {
     setEdit(true)
   }
 
   let deleteQuestion = (e) => {
     axios
-      .delete('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request/' + course + '/' + e.target.value)
-      .then(function (response) {
+      .delete('localhost:5678/request/' + course + '/' + e.target.value)
+      .then(function () {
         // handle success
         refreshPage()
       })
@@ -263,13 +263,13 @@ function Content() {
     e.preventDefault()
 
     axios
-      .put('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request/' + course + '/' + editValue, {
+      .put('localhost:5678/request/' + course + '/' + editValue, {
         question: question,
         type: type,
         options: options.toString().split(','),
         answer: answer.toString().split(','),
       })
-      .then(function (response) {
+      .then(function () {
         // handle success
         setAnswer('')
         setType('pick one')
@@ -298,7 +298,7 @@ function Content() {
         Refreshes the page
     */
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request/' + course)
+      .get('localhost:5678/request/' + course)
       .then(function (response) {
         // handle success
         setError(false)
@@ -481,13 +481,13 @@ function Content() {
     } else {
       console.log('Success')
       axios
-        .post('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/request/' + course, {
+        .post('localhost:5678/request/' + course, {
           question: question,
           type: type,
           options: options,
           answer: answer,
         })
-        .then(function (response) {
+        .then(function () {
           // handle success
           setAnswer('')
           setType('pick one')
@@ -511,10 +511,6 @@ function Content() {
         })
     }
 
-    let removed = items.splice(
-      parseInt(e.target.parentNode.parentNode.cells[0].innerText) - 1,
-      1
-    )
 
     setItems(items)
     if (items.length == 0) {

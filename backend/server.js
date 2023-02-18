@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path:'backend/.env'});
 const Mongoclient = require('mongodb').MongoClient;
 const express = require('express');
 const app = express();
@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(function (req, res, next) {
   
-  res.setHeader('Access-Control-Allow-Origin', 'https://jfig00.github.io');
+  res.setHeader('Access-Control-Allow-Origin', 'https://jfig00.github.io/medapp');
   //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');

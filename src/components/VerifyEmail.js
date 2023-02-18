@@ -6,7 +6,7 @@ import {
 import { auth } from './Firebase'
 import { sendEmailVerification} from 'firebase/auth'
 import Loader from 'react-loaders'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 function VerifyEmail() {
@@ -27,7 +27,7 @@ function VerifyEmail() {
     console.log(auth.currentUser.uid)
     console.log(auth.currentUser.displayName)
     axios
-      .post('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user', {
+      .post('localhost:5678/user', {
         points: 0,
         userID: auth.currentUser.uid,
         userCourses: userCourses.split(""),

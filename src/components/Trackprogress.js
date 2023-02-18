@@ -5,13 +5,9 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { auth } from './Firebase'
 import {
-  Card,
   Container,
   Row,
   Col,
-  Form,
-  Button,
-  CardGroup,
   Table,
 } from 'react-bootstrap'
 import Loader from 'react-loaders'
@@ -27,7 +23,7 @@ function Trackprogress() {
 
   let showLeaderBoard = () => {
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user')
+      .get('localhost:5678/user')
       .then(function (response) {
         // handle success
         var pointValue = response.data.slice(0);
@@ -52,7 +48,7 @@ function Trackprogress() {
 
   let currentInfo = () =>{
     axios
-      .get('http://ec2-3-82-106-234.compute-1.amazonaws.com:5678/user/' + auth.currentUser.uid)
+      .get('localhost:5678/user/' + auth.currentUser.uid)
       .then(function (response) {
         // handle success
         setBadges(response.data.badges.sort())
