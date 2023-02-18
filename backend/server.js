@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(function (req, res, next) {
   
-  res.setHeader('Access-Control-Allow-Origin', 'http://ec2-3-82-106-234.compute-1.amazonaws.com:3000');
+  res.setHeader('Access-Control-Allow-Origin', 'https://jfig00.github.io');
   //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
