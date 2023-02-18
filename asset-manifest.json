@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/medapp/static/css/main.20710227.css",
-    "main.js": "/medapp/static/js/main.6e09fbed.js",
+    "main.js": "/medapp/static/js/main.9008322c.js",
     "static/media/bootstrap-icons.woff?": "/medapp/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
     "static/media/bootstrap-icons.woff2?": "/medapp/static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
     "static/media/Background.png": "/medapp/static/media/Background.ad244678666c59555965.png",
@@ -15,10 +15,10 @@
     "static/media/CoolveticaRg-Regular.woff2": "/medapp/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
     "index.html": "/medapp/index.html",
     "main.20710227.css.map": "/medapp/static/css/main.20710227.css.map",
-    "main.6e09fbed.js.map": "/medapp/static/js/main.6e09fbed.js.map"
+    "main.9008322c.js.map": "/medapp/static/js/main.9008322c.js.map"
   },
   "entrypoints": [
     "static/css/main.20710227.css",
-    "static/js/main.6e09fbed.js"
+    "static/js/main.9008322c.js"
   ]
 }
