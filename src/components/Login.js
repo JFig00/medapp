@@ -107,7 +107,7 @@ export const Login = () => {
             })
             .catch(function (error) {
               // handle error
-              if (error.response.status === 400) {
+              if (error.response === 400) {
                 console.log(error)
                 setError('Cant find record')
               } else {

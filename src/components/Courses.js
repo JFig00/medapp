@@ -69,7 +69,7 @@ function Courses() {
     setIndex(0)
 
     axios
-      .get('localhost:5678/user/' + auth.currentUser.uid) 
+      .get('http://localhost:5678/user/' + auth.currentUser.uid) 
       .then(function (response) {
         // handle success
         setError(false)
@@ -103,7 +103,7 @@ function Courses() {
     setCourse(e.target.innerText)
 
     axios
-      .get('localhost:5678/request/' + e.target.innerText)
+      .get('http://localhost:5678/request/' + e.target.innerText)
       .then(function (response) {
         // handle success
         setError(false)
@@ -288,7 +288,7 @@ function Courses() {
       }
       
       axios
-        .put('localhost:5678/user/' + auth.currentUser.uid, {
+        .put('http://localhost:5678/user/' + auth.currentUser.uid, {
           points: points,
           badges: badges
         })

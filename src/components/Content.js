@@ -17,7 +17,7 @@ function Content() {
     */
   let getModule = () => {
     axios
-      .get('localhost:5678/request')
+      .get('http://localhost:5678/request')
       .then(function (response) {
         // handle success
         setError(false)
@@ -26,7 +26,7 @@ function Content() {
       })
       .catch(function (error) {
         // handle error
-        if (error.response.status === 400) {
+        if (error.response && error.response.status === 400) {
           console.log(error)
           setError('Cant find record')
         } else {
@@ -48,7 +48,7 @@ function Content() {
     console.log(auth.currentUser.uid)
 
     axios
-      .get('localhost:5678/user/' + auth.currentUser.uid)
+      .get('http://localhost:5678/user/' + auth.currentUser.uid)
       .then(function (response) {
         // handle success
         setError(false)
@@ -69,7 +69,7 @@ function Content() {
           console.log(newCourses)
 
           axios
-            .put('localhost:5678/user/' + auth.currentUser.uid, {
+            .put('http://localhost:5678/user/' + auth.currentUser.uid, {
               userCourses: newCourses,
             })
             .then(function () {
